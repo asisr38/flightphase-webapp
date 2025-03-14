@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  :root[class~="dark"] {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: linear-gradient(45deg, 
+      rgba(11,5,75,1) 4%, 
+      rgba(17,8,115,1) 16%, 
+      rgba(5,25,120,1) 30%, 
+      rgba(102,115,174,0.8) 47%, 
+      rgba(5,25,120,1) 56%, 
+      rgba(17,8,115,1) 76%, 
+      rgba(11,5,75,1) 93%);
+  }
+
+  .gradient-card {
+    @apply bg-gradient-to-b from-white/[0.12] to-white/[0.08] backdrop-blur-sm border border-white/10;
+  }
+
+  .gradient-text-accent {
+    @apply bg-gradient-to-r from-[#1E0B4C] via-[#4B9EFF] to-[#0B4FFF] bg-clip-text text-transparent;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent;
+  }
+
+  .gradient-button {
+    @apply bg-gradient-to-r from-[#1E0B4C] via-[#4B9EFF] to-[#0B4FFF] hover:from-[#160839] hover:via-[#3B8EEF] hover:to-[#0A3FDF] transition-all duration-300 relative overflow-hidden;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .gradient-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-black/30 via-black/40 to-black/30 rounded-[inherit];
+    mix-blend-mode: soft-light;
+  }
+
+  .gradient-button::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-[inherit];
+    mix-blend-mode: multiply;
+  }
+
+  .gradient-button > * {
+    @apply relative z-10;
+  }
+
+  .gradient-button:hover::before {
+    @apply bg-gradient-to-r from-black/20 via-black/30 to-black/20;
+  }
+
+  .gradient-button:hover::after {
+    @apply from-black/30;
+  }
+
+  .gradient-button:active::before {
+    @apply bg-gradient-to-r from-black/40 via-black/50 to-black/40;
+  }
+
+  .gradient-border {
+    @apply border border-white/10 shadow-lg shadow-[#4B9EFF]/5;
+  }
+
+  .gradient-glow {
+    @apply relative;
+  }
+
+  .gradient-glow::before {
+    content: '';
+    @apply absolute -inset-[1px] rounded-[inherit] bg-gradient-to-r from-[#1E0B4C]/25 via-[#4B9EFF]/25 to-[#0B4FFF]/25 blur-sm -z-10;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/[0.08] border border-white/10;
+  }
+
+  .glass-card {
+    @apply rounded-2xl gradient-card hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply antialiased scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground min-h-screen font-body;
+    @apply gradient-primary;
+    background-attachment: fixed;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+  
+  p {
+    @apply font-body leading-relaxed;
+  }
+  
+  .heading-gradient {
+    @apply bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 4s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  z-index: 100;
+  transition: width 0.1s ease-out;
+}
+
