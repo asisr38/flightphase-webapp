@@ -1,9 +1,21 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Users, Zap, Timer, MapPin, Calendar, CheckCircle } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { InquiryModal } from "@/components/InquiryModal"
 
 export default function TrainingPage() {
+  const [inquiryModalOpen, setInquiryModalOpen] = useState(false)
+  const [selectedProgram, setSelectedProgram] = useState<string>("General")
+
+  const handleInquireClick = (programType: string) => {
+    setSelectedProgram(programType)
+    setInquiryModalOpen(true)
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-[#030456]">
       <main className="flex-1">
@@ -109,7 +121,12 @@ export default function TrainingPage() {
                     <span className="text-2xl font-bold text-white">$750</span>
                     <span className="text-white/80">per session</span>
                   </div>
-                  <Button className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium">Book a Session</Button>
+                  <Button 
+                    className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium"
+                    onClick={() => handleInquireClick("1:1 Coaching")}
+                  >
+                    Inquire Now
+                  </Button>
                 </div>
               </div>
 
@@ -149,7 +166,12 @@ export default function TrainingPage() {
                     <span className="text-2xl font-bold text-white">Contact</span>
                     <span className="text-white/80">for rates</span>
                   </div>
-                  <Button className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium">Inquire Now</Button>
+                  <Button 
+                    className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium"
+                    onClick={() => handleInquireClick("Group Training")}
+                  >
+                    Inquire Now
+                  </Button>
                 </div>
               </div>
 
@@ -189,8 +211,11 @@ export default function TrainingPage() {
                     <span className="text-2xl font-bold text-white">$1,250</span>
                     <span className="text-white/80">per day</span>
                   </div>
-                  <Button className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium">
-                    Schedule Intensive
+                  <Button 
+                    className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium"
+                    onClick={() => handleInquireClick("Two-a-Day Intensive")}
+                  >
+                    Inquire Now
                   </Button>
                 </div>
               </div>
@@ -307,8 +332,12 @@ export default function TrainingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white">Ready to Elevate Your Performance?</h2>
               <p className="text-white/80">Take the first step toward unlocking your full athletic potential.</p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Button size="lg" className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium px-8">
-                  Book a Session
+                <Button 
+                  size="lg" 
+                  className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium px-8"
+                  onClick={() => handleInquireClick("Training")}
+                >
+                  Inquire Now
                 </Button>
                 <Button
                   variant="outline"
@@ -322,6 +351,13 @@ export default function TrainingPage() {
           </div>
         </section>
       </main>
+      
+      {/* Inquiry Modal */}
+      <InquiryModal 
+        open={inquiryModalOpen}
+        onOpenChange={setInquiryModalOpen}
+        programType={selectedProgram}
+      />
     </div>
   )
 }

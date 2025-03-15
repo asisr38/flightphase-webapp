@@ -17,7 +17,7 @@ export function SiteFooter() {
                 alt="FlightPhase"
                 width={160}
                 height={36}
-                className="h-9 w-auto"
+                className="h-auto w-auto"
               />
             </Link>
             <p className="text-sm text-white/60 max-w-xs">
