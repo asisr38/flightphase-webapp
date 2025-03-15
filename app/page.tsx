@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,8 +26,18 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import VideoPlayer from "./components/VideoPlayer";
+import { InquiryModal } from "@/components/InquiryModal";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<string>("General");
+
+  const handleInquireClick = (programType: string) => {
+    setSelectedProgram(programType);
+    setInquiryModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen">
       <main>
@@ -733,7 +745,10 @@ export default function HomePage() {
                       </ul>
                     </div>
                     <div className="mt-auto">
-                      <Button className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl">
+                      <Button 
+                        className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl"
+                        onClick={() => program.price === "Contact" ? handleInquireClick(program.title) : null}
+                      >
                         {program.price === "Contact" ? "Inquire Now" : "Book Now"}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -890,6 +905,13 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+      
+      {/* Inquiry Modal */}
+      <InquiryModal 
+        open={inquiryModalOpen}
+        onOpenChange={setInquiryModalOpen}
+        programType={selectedProgram}
+      />
     </div>
   );
 }

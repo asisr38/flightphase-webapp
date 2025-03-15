@@ -1,8 +1,27 @@
+"use client";
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Clock, Download, Play, Shield, Smartphone, Video } from "lucide-react"
+import { CheckCircle, Clock, Download, Play, Shield, Smartphone, Video, Pause } from "lucide-react"
+import { useState, useRef } from "react"
 
 export default function OnlineProgramPage() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play().catch(err => {
+          console.error("Error playing video:", err);
+        });
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-[#030456]">
       <main className="flex-1">
@@ -38,15 +57,24 @@ export default function OnlineProgramPage() {
               </div>
               <div className="relative rounded-xl overflow-hidden">
                 <div className="aspect-video bg-[#010B60] relative">
-                  <Image
-                    src="/placeholder.svg?height=720&width=1280"
-                    alt="Program preview"
-                    fill
-                    className="object-cover opacity-80"
+                  <video
+                    ref={videoRef}
+                    src="/flightphase-promo.webm"
+                    className="absolute inset-0 w-full h-full object-cover opacity-80"
+                    playsInline
+                    muted
+                    loop
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-[#00BFFF]/90 flex items-center justify-center cursor-pointer hover:bg-[#00BFFF] transition-colors">
-                      <Play className="h-8 w-8 text-white ml-1" />
+                    <div 
+                      className="w-16 h-16 rounded-full bg-[#00BFFF]/90 flex items-center justify-center cursor-pointer hover:bg-[#00BFFF] transition-colors"
+                      onClick={togglePlay}
+                    >
+                      {isPlaying ? (
+                        <Pause className="h-8 w-8 text-white" />
+                      ) : (
+                        <Play className="h-8 w-8 text-white ml-1" />
+                      )}
                     </div>
                   </div>
                 </div>
