@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,10 @@ export function SiteHeader() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
+
+  const handleLinkClick = () => {
+    setSheetOpen(false);
+  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"}`}>
@@ -73,7 +78,7 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center">
-            <Sheet>
+            <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="outline"
@@ -87,6 +92,8 @@ export function SiteHeader() {
               <SheetContent
                 side="right"
                 className="gradient-primary border-l border-white/10"
+                title="Main Navigation"
+                description="Site navigation menu with links to main sections"
               >
                 <nav className="flex flex-col gap-6 mt-10 relative z-10">
                   {[
@@ -99,6 +106,7 @@ export function SiteHeader() {
                       key={item.href}
                       href={item.href}
                       className="text-lg font-medium text-white/80 hover:text-white transition-all duration-300 hover:translate-x-2 relative group"
+                      onClick={handleLinkClick}
                     >
                       {item.label}
                       <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1E0B4C] via-[#4B9EFF] to-[#0B4FFF] group-hover:w-full transition-all duration-300"></span>
@@ -107,7 +115,7 @@ export function SiteHeader() {
                 </nav>
 
                 <div className="mt-8">
-                  <Link href="#online-program">
+                  <Link href="#online-program" onClick={handleLinkClick}>
                     <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-base font-medium w-full">
                       Get The Course
                     </button>

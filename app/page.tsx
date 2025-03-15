@@ -39,7 +39,7 @@ export default function HomePage() {
               loop
               playsInline
               preload="auto"
-              className="w-full h-full object-cover scale-110 blur-[2px]"
+              className="w-full h-full object-cover scale-100 md:scale-110 blur-[2px]"
               style={{ opacity: "0.5" }}
             >
               <source src="/flightphase-promo.webm" type="video/webm" />
@@ -48,23 +48,23 @@ export default function HomePage() {
           </div>
 
           {/* Background gradients and effects */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70 z-10"></div>
-          <div className="absolute inset-0 bg-[url('/grid.png')] bg-center opacity-20 z-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80 z-10"></div>
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20 z-20"></div>
 
           <div className="container relative z-30 px-4 mx-auto">
             <div className="max-w-[1400px] mx-auto">
-              <div className="flex flex-col items-center text-center space-y-8 mb-12">
+              <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 mb-12 md:mb-16">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm border border-blue-500/20 shadow-lg shadow-blue-500/20 backdrop-blur-sm">
-                  <span className="relative flex h-3 w-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm border border-blue-500/20 shadow-lg shadow-blue-500/20 backdrop-blur-sm">
+                  <span className="relative flex h-2.5 w-2.5 md:h-3 md:w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 md:h-3 md:w-3 bg-blue-500"></span>
                   </span>
                   Elite Athletic Training
                 </div>
 
                 {/* Main Title */}
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-4xl">
                   Elevate Your Athletic{" "}
                   <span className="gradient-text-accent animate-gradient">
                     Performance
@@ -72,13 +72,13 @@ export default function HomePage() {
                 </h1>
 
                 {/* Tagline */}
-                <p className="text-xl md:text-2xl text-neutral-200 max-w-2xl leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-2xl text-neutral-100 max-w-2xl leading-relaxed">
                   Unlock Your Full Potential with Tailored Training and Proven
                   Methods
                 </p>
 
                 {/* Description */}
-                <p className="text-lg text-neutral-300 max-w-3xl">
+                <p className="text-base sm:text-lg md:text-lg text-neutral-200 max-w-3xl">
                   At Flight Phase, we transform athletes into explosive
                   performers. Whether you're looking to enhance your speed,
                   strength, or overall athleticism, Aron Long's proven coaching
@@ -86,20 +86,20 @@ export default function HomePage() {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
                   <a href="#online-program">
                     <Button
                       size="lg"
-                      className="gradient-button text-white rounded-full h-14 px-8 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105"
+                      className="gradient-button text-white rounded-full h-12 md:h-14 px-6 md:px-8 text-base md:text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105"
                     >
                       Get Transformation Program
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                     </Button>
                   </a>
                   <a href="#assessment">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full h-14 px-8 text-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full h-12 md:h-14 px-6 md:px-8 text-base md:text-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
                     >
                       Take Free Assessment
                     </Button>
@@ -107,7 +107,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-8 pt-8 max-w-3xl w-full">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 pt-6 md:pt-8 max-w-3xl w-full">
                   {[
                     { stat: "All-State", label: "Track Athlete" },
                     { stat: "Conference", label: "Champion" },
@@ -115,12 +115,12 @@ export default function HomePage() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="backdrop-blur-sm bg-white/5 rounded-2xl p-4 border border-white/10"
+                      className="backdrop-blur-sm bg-black/30 md:bg-white/5 rounded-xl md:rounded-2xl p-2 md:p-4 border border-white/10"
                     >
-                      <div className="gradient-text-accent">
+                      <div className="gradient-text-accent text-sm sm:text-base md:text-base font-medium md:font-semibold">
                         {item.stat}
                       </div>
-                      <div className="text-sm text-neutral-300">
+                      <div className="text-xs sm:text-sm md:text-sm text-neutral-200">
                         {item.label}
                       </div>
                     </div>
@@ -131,9 +131,9 @@ export default function HomePage() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
-            <span className="text-sm">Scroll to explore</span>
-            <div className="w-[2px] h-8 bg-gradient-to-b from-white/60 to-transparent"></div>
+          <div className="absolute bottom-2 sm:bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 text-white/60 z-30">
+            <span className="text-xs sm:text-sm md:text-sm">Scroll to explore</span>
+            <div className="w-[1px] sm:w-[2px] h-4 sm:h-6 md:h-8 bg-gradient-to-b from-white/60 to-transparent"></div>
           </div>
         </section>
 
@@ -275,7 +275,7 @@ export default function HomePage() {
         >
           <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-neutral-900 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10" />
-          <div className="absolute inset-0 bg-[url('/grid.png')] bg-center opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20"></div>
           <div className="container px-4 mx-auto">
             <div className="text-center mb-16 space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm">
@@ -700,40 +700,44 @@ export default function HomePage() {
               ].map((program, i) => (
                 <div
                   key={i}
-                  className="relative group rounded-2xl bg-neutral-800/50 hover:bg-neutral-800 p-6 transition-all duration-300 hover:translate-y-[-5px]"
+                  className="relative group rounded-2xl bg-neutral-800/50 hover:bg-neutral-800 p-6 transition-all duration-300 hover:translate-y-[-5px] flex flex-col h-full"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative space-y-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
-                      {program.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">
-                      {program.title}
-                    </h3>
-                    <div className="space-y-1">
-                      <div className="text-2xl font-bold text-white">
-                        {program.price}
+                  <div className="relative flex flex-col h-full">
+                    <div>
+                      <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
+                        {program.icon}
                       </div>
-                      <div className="text-sm text-neutral-400">
-                        {program.period}
+                      <h3 className="text-xl font-bold text-white mb-4">
+                        {program.title}
+                      </h3>
+                      <div className="space-y-1 mb-4">
+                        <div className="text-2xl font-bold text-white">
+                          {program.price}
+                        </div>
+                        <div className="text-sm text-neutral-400">
+                          {program.period}
+                        </div>
                       </div>
+                      <p className="text-neutral-300 mb-4">{program.description}</p>
+                      <ul className="space-y-2 mb-6">
+                        {program.features.map((feature, j) => (
+                          <li
+                            key={j}
+                            className="flex items-start text-sm text-neutral-400"
+                          >
+                            <CheckCircle className="h-4 w-4 mr-2 text-blue-400 mt-0.5 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <p className="text-neutral-300">{program.description}</p>
-                    <ul className="space-y-2">
-                      {program.features.map((feature, j) => (
-                        <li
-                          key={j}
-                          className="flex items-start text-sm text-neutral-400"
-                        >
-                          <CheckCircle className="h-4 w-4 mr-2 text-blue-400 mt-0.5 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl">
-                      {program.price === "Contact" ? "Inquire Now" : "Book Now"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <div className="mt-auto">
+                      <Button className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl">
+                        {program.price === "Contact" ? "Inquire Now" : "Book Now"}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
               ))}
