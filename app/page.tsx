@@ -163,7 +163,7 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/coachimage/aronlong3.png"
+                  src="/coachImage/aronlong3.png"
                   alt="Aron Long"
                   width={600}
                   height={800}
