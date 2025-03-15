@@ -54,7 +54,7 @@ export default function VideoPlayer() {
         <div
           className={`w-20 h-20 rounded-full bg-blue-500/90 flex items-center justify-center cursor-pointer hover:bg-blue-500 transition-all transform hover:scale-105 duration-200 ${
             isPlaying
-              ? "opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100"
+              ? "opacity-0"
               : "opacity-100 scale-100"
           }`}
           onClick={togglePlay}

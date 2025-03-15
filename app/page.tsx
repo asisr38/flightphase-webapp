@@ -38,10 +38,12 @@ export default function HomePage() {
               muted
               loop
               playsInline
+              preload="auto"
               className="w-full h-full object-cover scale-110 blur-[2px]"
               style={{ opacity: "0.5" }}
             >
               <source src="/flightphase-promo.webm" type="video/webm" />
+              <source src="/flightphase-promo.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -107,9 +109,9 @@ export default function HomePage() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-8 pt-8 max-w-3xl w-full">
                   {[
-                    { stat: "500+", label: "Athletes Trained" },
-                    { stat: "10+", label: "Years Experience" },
-                    { stat: "95%", label: "Success Rate" }
+                    { stat: "All-State", label: "Track Athlete" },
+                    { stat: "Conference", label: "Champion" },
+                    { stat: "Athletic", label: "Scholarship" }
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -266,193 +268,71 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Training Programs */}
-        <section
-          id="training"
-          className="py-24 bg-black relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10" />
-          <div className="container px-4 mx-auto relative">
-            <div className="text-center mb-16 space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm">
-                Work With Me
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-white">
-                Training <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Programs</span>
-              </h2>
-              <p className="text-neutral-400 max-w-2xl mx-auto">
-                At Flight Phase, we offer a range of training programs tailored to meet the unique needs of every athlete
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  title: "First Class 1:1 Coaching",
-                  price: "$750",
-                  period: "per session",
-                  description:
-                    "Experience personalized training with Aron Long, focusing on your specific goals. This program is designed to hone your speed, strength, and agility through tailored workouts and direct feedback.",
-                  features: [
-                    "Personalized assessment and goal setting",
-                    "Custom training program development",
-                    "Real-time technique correction and feedback",
-                    "Travel available for U.S. and International clients"
-                  ],
-                  icon: <Users className="h-6 w-6" />
-                },
-                {
-                  title: "Elite Group Training",
-                  price: "Contact",
-                  period: "for group rates",
-                  description:
-                    "Train alongside other driven athletes in a competitive yet supportive environment. This program emphasizes teamwork, pushing you to achieve more through shared goals and mutual motivation.",
-                  features: [
-                    "Small group sizes (4-8 athletes)",
-                    "Sport-specific training options",
-                    "Competitive training environment",
-                    "Travel available for U.S. and International clients"
-                  ],
-                  icon: <Target className="h-6 w-6" />
-                },
-                {
-                  title: "Flight Phase Two-a-Day Intensives",
-                  price: "$1,250",
-                  period: "per day",
-                  description:
-                    "Double your progress with our exclusive two-a-day training sessions. Morning and evening sessions designed to maximize your gains in a single day, focusing on speed, power, and recovery techniques.",
-                  features: [
-                    "Morning and afternoon training sessions",
-                    "Comprehensive skill development",
-                    "Video analysis and technique refinement",
-                    "Travel available for U.S. and International clients"
-                  ],
-                  icon: <Timer className="h-6 w-6" />
-                }
-              ].map((program, i) => (
-                <div
-                  key={i}
-                  className="relative group rounded-2xl bg-neutral-800/50 hover:bg-neutral-800 p-6 transition-all duration-300 hover:translate-y-[-5px]"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative space-y-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
-                      {program.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">
-                      {program.title}
-                    </h3>
-                    <div className="space-y-1">
-                      <div className="text-2xl font-bold text-white">
-                        {program.price}
-                      </div>
-                      <div className="text-sm text-neutral-400">
-                        {program.period}
-                      </div>
-                    </div>
-                    <p className="text-neutral-300">{program.description}</p>
-                    <ul className="space-y-2">
-                      {program.features.map((feature, j) => (
-                        <li
-                          key={j}
-                          className="flex items-start text-sm text-neutral-400"
-                        >
-                          <CheckCircle className="h-4 w-4 mr-2 text-blue-400 mt-0.5 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl">
-                      {program.price === "Contact" ? "Inquire Now" : "Book Now"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-16 max-w-4xl mx-auto">
-              <div className="rounded-2xl bg-neutral-800/50 p-6">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Travel Availability
-                </h3>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1" className="border-neutral-700">
-                    <AccordionTrigger className="text-white hover:text-blue-400 hover:no-underline">
-                      Regional Travel
-                    </AccordionTrigger>
-                    <AccordionContent className="text-neutral-400">
-                      Available for training sessions within a 100-mile radius
-                      of our home base. Additional travel fees may apply based
-                      on distance.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2" className="border-neutral-700">
-                    <AccordionTrigger className="text-white hover:text-blue-400 hover:no-underline">
-                      National Travel
-                    </AccordionTrigger>
-                    <AccordionContent className="text-neutral-400">
-                      Available for multi-day training camps and team sessions
-                      throughout the United States. Travel and accommodation
-                      expenses will be added to the base rate.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3" className="border-neutral-700">
-                    <AccordionTrigger className="text-white hover:text-blue-400 hover:no-underline">
-                      Booking Requirements
-                    </AccordionTrigger>
-                    <AccordionContent className="text-neutral-400">
-                      Travel sessions require a minimum of 2 weeks advance
-                      booking. For team training, a minimum of 5 athletes is
-                      required. Contact us for detailed availability.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Online Program */}
+        {/* Online Program Section */}
         <section
           id="online-program"
-          className="py-24 bg-neutral-900 relative overflow-hidden"
+          className="py-24 bg-black relative overflow-hidden"
         >
-          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-neutral-900 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10" />
+          <div className="absolute inset-0 bg-[url('/grid.png')] bg-center opacity-20"></div>
           <div className="container px-4 mx-auto">
             <div className="text-center mb-16 space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm">
-                Featured Program
+                Featured Online Program
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white">
-                Elite Athlete <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Transformation</span> Program
+                Athletic Speed & Power{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                  Transformation
+                </span>
               </h2>
               <p className="text-neutral-400 max-w-2xl mx-auto">
-                Our online program is designed to transform athletes into their most explosive selves
+                Master explosive techniques to reach your full potential
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 max-w-6xl mx-auto">
               <div className="space-y-8">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <h3 className="text-2xl font-bold text-white">
-                    The Explosive Power Blueprint
+                    Transform Your Athletic Ability
                   </h3>
                   <p className="text-neutral-300">
-                    More than just a training program—it's a complete athletic transformation. Tailored specifically for athletes aiming to maximize their speed, strength, and explosiveness, this program offers an unparalleled approach to athletic development.
+                    This comprehensive online program delivers elite training methods directly to you, no matter where you are. Designed by Aron Long, this program distills years of professional training expertise into focused, results-driven workouts.
                   </p>
-                </div>
 
-                <div className="flex justify-center">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-3xl font-bold text-blue-400">$197</span>
-                      <span className="text-xl text-neutral-500 line-through">
-                        $325
-                      </span>
-                      <span className="bg-blue-500 text-white text-sm px-3 py-1 rounded-full">
-                        39% OFF
-                      </span>
+                  <ul className="space-y-3">
+                    {[
+                      "Six detailed training modules with HD video demonstrations",
+                      "Progressive workout structures for continued improvement",
+                      "Mobility routines to enhance movement patterns and prevent injury",
+                      "Detailed breakdown of explosive movement mechanics",
+                      "Access anytime, anywhere, on any device"
+                    ].map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start text-neutral-300"
+                      >
+                        <CheckCircle className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-col sm:flex-row items-center gap-6">
+                    <div>
+                      <div className="text-3xl font-bold text-white mb-1">
+                        $197
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl text-neutral-500 line-through">
+                          $325
+                        </span>
+                        <span className="bg-blue-500 text-white text-sm px-3 py-1 rounded-full">
+                          39% OFF
+                        </span>
+                      </div>
                     </div>
                     
                     <a href="#online-program">
@@ -548,9 +428,60 @@ export default function HomePage() {
                         </p>
                         <div className="flex items-center text-blue-400">
                           <Clock className="h-4 w-4 mr-2" />
-                          <span className="text-sm">{lesson.duration}</span>
+                          <span>{lesson.duration}</span>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-16 max-w-6xl mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                What's Included
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    title: "HD Video Instruction",
+                    description:
+                      "Crystal clear demonstrations for all exercises with detailed technique cues.",
+                    icon: <Video className="h-5 w-5" />
+                  },
+                  {
+                    title: "Lifetime Access",
+                    description:
+                      "Purchase once and train indefinitely. No monthly subscriptions or hidden fees.",
+                    icon: <Download className="h-5 w-5" />
+                  },
+                  {
+                    title: "Mobile & Desktop Friendly",
+                    description:
+                      "Train anywhere with seamless access across all your devices.",
+                    icon: <Smartphone className="h-5 w-5" />
+                  },
+                  {
+                    title: "Immediate Availability",
+                    description:
+                      "Start your training journey instantly after purchase with immediate access.",
+                    icon: <Zap className="h-5 w-5" />
+                  }
+                ].map((feature, i) => (
+                  <div
+                    key={i}
+                    className="bg-neutral-800 rounded-xl p-6 hover:bg-neutral-800/80 transition-all duration-300 hover:translate-y-[-5px]"
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
+                        {feature.icon}
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2">
+                        {feature.title}
+                      </h4>
+                      <p className="text-neutral-400 text-sm">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -562,41 +493,56 @@ export default function HomePage() {
         {/* Assessment Section */}
         <section
           id="assessment"
-          className="py-24 bg-black relative overflow-hidden"
+          className="py-24 bg-neutral-900 relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10" />
-          <div className="container px-4 mx-auto relative">
+          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent"></div>
+          <div className="container px-4 mx-auto">
             <div className="text-center mb-16 space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm">
                 Free Assessment
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white">
-                Explosive Athlete <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Assessment</span>
+                Discover Your Athletic{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                  Potential
+                </span>
               </h2>
               <p className="text-neutral-400 max-w-2xl mx-auto">
-                Discover where you stand and how you can become faster, stronger, and more explosive
+                Take our comprehensive assessment to identify strengths and areas for improvement
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-white">
-                    Unlock Your Athletic Potential
-                  </h3>
-                  <p className="text-neutral-300">
-                    The Explosive Athlete Assessment is designed to identify
-                    your current athletic profile, pinpoint areas for
-                    improvement, and provide personalized recommendations to
-                    elevate your performance.
-                  </p>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-white">
+                  Why Take The Assessment?
+                </h3>
+                <p className="text-neutral-300">
+                  This comprehensive assessment helps identify your athletic profile, strengths, and areas for improvement. In just 5 minutes, you'll receive valuable insights to guide your training journey.
+                </p>
 
-                <div className="flex justify-center mt-10">
-                  <a 
-                    href="https://topo-mge3qshy.scoreapp.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                <ul className="space-y-3">
+                  {[
+                    "Get a customized athletic profile",
+                    "Identify muscular imbalances and weaknesses",
+                    "Receive tailored training recommendations",
+                    "Establish a personalized baseline",
+                    "Set realistic performance goals"
+                  ].map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start text-neutral-300"
+                    >
+                      <CheckCircle className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="pt-4">
+                  <a
+                    href="https://form.typeform.com/to/GJzwHsmP"
+                    target="_blank"
                   >
                     <Button
                       size="lg"
@@ -683,6 +629,153 @@ export default function HomePage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Training Programs */}
+        <section
+          id="training"
+          className="py-24 bg-black relative overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/10" />
+          <div className="container px-4 mx-auto relative">
+            <div className="text-center mb-16 space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm">
+                Work With Me
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white">
+                Training <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Programs</span>
+              </h2>
+              <p className="text-neutral-400 max-w-2xl mx-auto">
+                At Flight Phase, we offer a range of training programs tailored to meet the unique needs of every athlete
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {[
+                {
+                  title: "1-on-1 Elite Coaching",
+                  price: "Contact",
+                  period: "for details",
+                  description:
+                    "Personalized training tailored to your specific goals and needs. This comprehensive approach addresses all aspects of your athletic development, from biomechanics to injury prevention and recovery strategies.",
+                  features: [
+                    "Custom training programs",
+                    "Detailed technique analysis",
+                    "Progress monitoring",
+                    "Travel available for U.S. and International clients"
+                  ],
+                  icon: <Users className="h-6 w-6" />
+                },
+                {
+                  title: "Elite Group Training",
+                  price: "Contact",
+                  period: "for details",
+                  description:
+                    "Train alongside other driven athletes in a competitive yet supportive environment. This program emphasizes teamwork, pushing you to achieve more through shared goals and mutual motivation.",
+                  features: [
+                    "Small group sizes (4-8 athletes)",
+                    "Sport-specific training options",
+                    "Competitive training environment",
+                    "Travel available for U.S. and International clients"
+                  ],
+                  icon: <Target className="h-6 w-6" />
+                },
+                {
+                  title: "Flight Phase Two-a-Day Intensives",
+                  price: "Contact",
+                  period: "for details",
+                  description:
+                    "Double your progress with our exclusive two-a-day training sessions. Morning and evening sessions designed to maximize your gains in a single day, focusing on speed, power, and recovery techniques.",
+                  features: [
+                    "Morning and afternoon training sessions",
+                    "Comprehensive skill development",
+                    "Video analysis and technique refinement",
+                    "Travel available for U.S. and International clients"
+                  ],
+                  icon: <Timer className="h-6 w-6" />
+                }
+              ].map((program, i) => (
+                <div
+                  key={i}
+                  className="relative group rounded-2xl bg-neutral-800/50 hover:bg-neutral-800 p-6 transition-all duration-300 hover:translate-y-[-5px]"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative space-y-4">
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                      {program.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">
+                      {program.title}
+                    </h3>
+                    <div className="space-y-1">
+                      <div className="text-2xl font-bold text-white">
+                        {program.price}
+                      </div>
+                      <div className="text-sm text-neutral-400">
+                        {program.period}
+                      </div>
+                    </div>
+                    <p className="text-neutral-300">{program.description}</p>
+                    <ul className="space-y-2">
+                      {program.features.map((feature, j) => (
+                        <li
+                          key={j}
+                          className="flex items-start text-sm text-neutral-400"
+                        >
+                          <CheckCircle className="h-4 w-4 mr-2 text-blue-400 mt-0.5 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl">
+                      {program.price === "Contact" ? "Inquire Now" : "Book Now"}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 max-w-4xl mx-auto">
+              <div className="rounded-2xl bg-neutral-800/50 p-6">
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Travel Availability
+                </h3>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-neutral-700">
+                    <AccordionTrigger className="text-white hover:text-blue-400 hover:no-underline">
+                      Regional Travel
+                    </AccordionTrigger>
+                    <AccordionContent className="text-neutral-400">
+                      Available for training sessions within a 100-mile radius
+                      of our home base. Additional travel fees may apply based
+                      on distance.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2" className="border-neutral-700">
+                    <AccordionTrigger className="text-white hover:text-blue-400 hover:no-underline">
+                      National Travel
+                    </AccordionTrigger>
+                    <AccordionContent className="text-neutral-400">
+                      Available for multi-day training camps and team sessions
+                      throughout the United States. Travel and accommodation
+                      expenses will be added to the base rate.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3" className="border-neutral-700">
+                    <AccordionTrigger className="text-white hover:text-blue-400 hover:no-underline">
+                      Booking Requirements
+                    </AccordionTrigger>
+                    <AccordionContent className="text-neutral-400">
+                      Travel sessions require a minimum of 2 weeks advance
+                      booking. For team training, a minimum of 5 athletes is
+                      required. Contact us for detailed availability.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
             </div>
           </div>
