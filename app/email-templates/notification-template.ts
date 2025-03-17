@@ -19,7 +19,7 @@ export function generateNotificationEmail(inquiry: any): string {
       programInfo = 'Online program inquiry';
       break;
     default:
-      programInfo = 'General inquiry';
+      programInfo = '';
   }
 
   return `
@@ -36,24 +36,30 @@ export function generateNotificationEmail(inquiry: any): string {
       color: #333333;
       margin: 0;
       padding: 0;
+      background-color: #f5f5f5;
     }
     .container {
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
       background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .header {
       background-color: #1E0B4C;
       color: white;
       padding: 20px;
       text-align: center;
+      border-radius: 8px 8px 0 0;
+      margin: -20px -20px 20px -20px;
     }
     .detail {
       margin-bottom: 10px;
-      padding: 10px;
+      padding: 12px;
       background-color: #f2f7ff;
       border-left: 3px solid #4B9EFF;
+      border-radius: 4px;
     }
     .detail strong {
       display: inline-block;
@@ -66,6 +72,7 @@ export function generateNotificationEmail(inquiry: any): string {
       background-color: #f2f7ff;
       padding: 15px;
       border-left: 3px solid #4B9EFF;
+      border-radius: 4px;
     }
     .message-box h3 {
       margin-top: 0;
@@ -80,6 +87,7 @@ export function generateNotificationEmail(inquiry: any): string {
       font-size: 12px;
       border-top: 1px solid #eee;
       padding-top: 15px;
+      border-radius: 0 0 8px 8px;
     }
     h1 {
       font-size: 20px;
@@ -106,8 +114,6 @@ export function generateNotificationEmail(inquiry: any): string {
       <h1>New Inquiry: ${inquiry.programType}</h1>
     </div>
     
-    <h2>${programInfo}</h2>
-    
     <div class="detail">
       <strong>Name:</strong> ${inquiry.name}
     </div>
@@ -131,6 +137,7 @@ export function generateNotificationEmail(inquiry: any): string {
     
     <div class="footer">
       <p>Contact form submission from FlightPhase website</p>
+      <p>&copy; ${new Date().getFullYear()} FlightPhase. All rights reserved.</p>
     </div>
   </div>
 </body>
@@ -159,7 +166,7 @@ export function generateNotificationEmailText(inquiry: any): string {
       programInfo = 'Online program inquiry';
       break;
     default:
-      programInfo = 'General inquiry';
+      programInfo = '';
   }
 
   return `
