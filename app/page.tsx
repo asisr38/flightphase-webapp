@@ -144,7 +144,9 @@ export default function HomePage() {
 
           {/* Scroll indicator */}
           <div className="absolute bottom-2 sm:bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 text-white/60 z-30">
-            <span className="text-xs sm:text-sm md:text-sm">Scroll to explore</span>
+            <span className="text-xs sm:text-sm md:text-sm">
+              Scroll to explore
+            </span>
             <div className="w-[1px] sm:w-[2px] h-4 sm:h-6 md:h-8 bg-gradient-to-b from-white/60 to-transparent"></div>
           </div>
         </section>
@@ -161,7 +163,8 @@ export default function HomePage() {
                 About Aron Long
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white relative">
-                Meet <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 relative">
+                Meet{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 relative">
                   Aron Long
                   <span className="absolute inset-0 blur-sm opacity-30 bg-gradient-to-r from-blue-400 to-purple-500 -z-10"></span>
                 </span>
@@ -188,7 +191,10 @@ export default function HomePage() {
                     Mission Statement
                   </h3>
                   <p className="text-xl text-neutral-300 italic">
-                    "At Flight Phase, we empower athletes to reach their highest potential through scientifically backed training methods and a commitment to excellence, focusing on explosive speed, strength, and agility."
+                    "At Flight Phase, we empower athletes to reach their highest
+                    potential through scientifically backed training methods and
+                    a commitment to excellence, focusing on explosive speed,
+                    strength, and agility."
                   </p>
                 </div>
 
@@ -311,7 +317,10 @@ export default function HomePage() {
                     Transform Your Athletic Ability
                   </h3>
                   <p className="text-neutral-300">
-                    This comprehensive online program delivers elite training methods directly to you, no matter where you are. Designed by Aron Long, this program distills years of professional training expertise into focused, results-driven workouts.
+                    This comprehensive online program delivers elite training
+                    methods directly to you, no matter where you are. Designed
+                    by Aron Long, this program distills years of professional
+                    training expertise into focused, results-driven workouts.
                   </p>
 
                   <ul className="space-y-3">
@@ -322,10 +331,7 @@ export default function HomePage() {
                       "Detailed breakdown of explosive movement mechanics",
                       "Access anytime, anywhere, on any device"
                     ].map((feature, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start text-neutral-300"
-                      >
+                      <li key={i} className="flex items-start text-neutral-300">
                         <CheckCircle className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                         {feature}
                       </li>
@@ -346,8 +352,12 @@ export default function HomePage() {
                         </span>
                       </div>
                     </div>
-                    
-                    <a href="#online-program">
+
+                    <a
+                      href="https://buy.stripe.com/test_9AQaG78Vm3YC8Mg001"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button
                         size="lg"
                         className="gradient-button text-white rounded-full h-14 px-8 text-lg"
@@ -359,11 +369,9 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex items-center text-neutral-400 text-sm justify-center">
+                <div className="flex items-center text-neutral-400 text-sm">
                   <Shield className="h-4 w-4 mr-2 text-blue-400" />
-                  <span>
-                    Lifetime access with no recurring fees
-                  </span>
+                  <span>Lifetime access with no recurring fees</span>
                 </div>
               </div>
 
@@ -520,7 +528,8 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-neutral-400 max-w-2xl mx-auto">
-                Take our comprehensive assessment to identify strengths and areas for improvement
+                Take our comprehensive assessment to identify strengths and
+                areas for improvement
               </p>
             </div>
 
@@ -530,7 +539,10 @@ export default function HomePage() {
                   Why Take The Assessment?
                 </h3>
                 <p className="text-neutral-300">
-                  This comprehensive assessment helps identify your athletic profile, strengths, and areas for improvement. In just 5 minutes, you'll receive valuable insights to guide your training journey.
+                  This comprehensive assessment helps identify your athletic
+                  profile, strengths, and areas for improvement. In just 5
+                  minutes, you'll receive valuable insights to guide your
+                  training journey.
                 </p>
 
                 <ul className="space-y-3">
@@ -541,10 +553,7 @@ export default function HomePage() {
                     "Establish a personalized baseline",
                     "Set realistic performance goals"
                   ].map((feature, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start text-neutral-300"
-                    >
+                    <li key={i} className="flex items-start text-neutral-300">
                       <CheckCircle className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                       {feature}
                     </li>
@@ -570,7 +579,10 @@ export default function HomePage() {
               <div className="bg-neutral-800 rounded-xl overflow-hidden border border-neutral-700">
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-4">
-                    Assessment <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Questions</span>
+                    Assessment{" "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                      Questions
+                    </span>
                   </h3>
                   <ul className="space-y-3">
                     {[
@@ -580,7 +592,10 @@ export default function HomePage() {
                       "Are you currently engaging in regular sprint training?",
                       "Do you incorporate explosive movements in your workouts?"
                     ].map((question, i) => (
-                      <li key={i} className="flex items-start text-sm text-neutral-300">
+                      <li
+                        key={i}
+                        className="flex items-start text-sm text-neutral-300"
+                      >
                         <div className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
                           {i + 1}
                         </div>
@@ -590,7 +605,8 @@ export default function HomePage() {
                   </ul>
                   <div className="mt-6 pt-6 border-t border-neutral-700">
                     <p className="text-neutral-400 text-sm">
-                      Complete the assessment to receive your personalized athletic profile and recommendations.
+                      Complete the assessment to receive your personalized
+                      athletic profile and recommendations.
                     </p>
                   </div>
                 </div>
@@ -658,10 +674,14 @@ export default function HomePage() {
                 Work With Me
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white">
-                Training <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Programs</span>
+                Training{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                  Programs
+                </span>
               </h2>
               <p className="text-neutral-400 max-w-2xl mx-auto">
-                At Flight Phase, we offer a range of training programs tailored to meet the unique needs of every athlete
+                At Flight Phase, we offer a range of training programs tailored
+                to meet the unique needs of every athlete
               </p>
             </div>
 
@@ -731,7 +751,9 @@ export default function HomePage() {
                           {program.period}
                         </div>
                       </div>
-                      <p className="text-neutral-300 mb-4">{program.description}</p>
+                      <p className="text-neutral-300 mb-4">
+                        {program.description}
+                      </p>
                       <ul className="space-y-2 mb-6">
                         {program.features.map((feature, j) => (
                           <li
@@ -745,11 +767,17 @@ export default function HomePage() {
                       </ul>
                     </div>
                     <div className="mt-auto">
-                      <Button 
+                      <Button
                         className="w-full bg-neutral-700 hover:bg-blue-600 text-white rounded-xl"
-                        onClick={() => program.price === "Contact" ? handleInquireClick(program.title) : null}
+                        onClick={() =>
+                          program.price === "Contact"
+                            ? handleInquireClick(program.title)
+                            : null
+                        }
                       >
-                        {program.price === "Contact" ? "Inquire Now" : "Book Now"}
+                        {program.price === "Contact"
+                          ? "Inquire Now"
+                          : "Book Now"}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -878,7 +906,8 @@ export default function HomePage() {
                     Ready to Transform Your Athletic Performance?
                   </h2>
                   <p className="text-neutral-300 max-w-2xl mx-auto">
-                    Get instant access to our Elite Athlete Transformation Program and start seeing results today.
+                    Get instant access to our Elite Athlete Transformation
+                    Program and start seeing results today.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                     <a href="#online-program">
@@ -905,9 +934,9 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-      
+
       {/* Inquiry Modal */}
-      <InquiryModal 
+      <InquiryModal
         open={inquiryModalOpen}
         onOpenChange={setInquiryModalOpen}
         programType={selectedProgram}
