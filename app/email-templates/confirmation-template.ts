@@ -2,6 +2,26 @@
  * Generate HTML email template for confirmation emails to users
  */
 export function generateConfirmationEmail(inquiry: any): string {
+  // Customize message based on program type
+  let programSpecificMessage = '';
+  
+  switch(inquiry.programType) {
+    case 'First Class 1:1 Coaching':
+      programSpecificMessage = 'Our personalized 1:1 coaching program will help you achieve your specific athletic goals.';
+      break;
+    case 'Elite Group Training':
+      programSpecificMessage = 'Our Elite Group Training program will push you to new heights in a competitive team environment.';
+      break;
+    case 'Two-a-Day Intensives':
+      programSpecificMessage = 'The Two-a-Day Intensives program is designed to maximize your progress through focused, high-intensity sessions.';
+      break;
+    case 'Online Program':
+      programSpecificMessage = 'Our online program provides you with the tools and techniques to transform your athletic performance remotely.';
+      break;
+    default:
+      programSpecificMessage = 'We offer various programs tailored to meet your specific athletic goals.';
+  }
+
   return `
 <!DOCTYPE html>
 <html>
@@ -12,8 +32,8 @@ export function generateConfirmationEmail(inquiry: any): string {
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
+      line-height: 1.5;
+      color: #333333;
       margin: 0;
       padding: 0;
     }
@@ -21,84 +41,80 @@ export function generateConfirmationEmail(inquiry: any): string {
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
+      background-color: #ffffff;
     }
     .header {
-      background-color: #00BFFF;
+      background-color: #1E0B4C;
       color: white;
       padding: 20px;
       text-align: center;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
     }
     .content {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      padding: 20px 0;
     }
     .highlight {
-      background-color: white;
+      background-color: #f2f7ff;
       padding: 15px;
-      border-radius: 5px;
-      border-left: 4px solid #00BFFF;
+      border-left: 4px solid #4B9EFF;
       margin-bottom: 20px;
-    }
-    .cta {
-      background-color: #00BFFF;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 10px;
-      font-weight: bold;
     }
     .footer {
       margin-top: 20px;
       text-align: center;
-      color: #777;
+      color: #666;
       font-size: 12px;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
     }
-    .social {
-      margin-top: 15px;
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0;
     }
-    .social a {
-      margin: 0 10px;
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+      color: #1E0B4C;
+    }
+    p {
+      margin: 0 0 15px;
+    }
+    .button {
+      background-color: #4B9EFF;
+      color: white;
+      padding: 10px 20px;
       text-decoration: none;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Thank You for Contacting FlightPhase</h1>
+      <h1>Thank You for Your Interest in FlightPhase</h1>
     </div>
     <div class="content">
       <h2>Hello ${inquiry.name},</h2>
       
       <div class="highlight">
         <p>We have received your inquiry about the <strong>${inquiry.programType}</strong> program.</p>
+        <p>${programSpecificMessage}</p>
       </div>
       
-      <p>Thank you for your interest in FlightPhase. Our team will review your inquiry and get back to you as soon as possible, usually within 24-48 hours.</p>
-      
-      <p>If you have any additional questions or need immediate assistance, feel free to reach out to us directly.</p>
+      <p>Our team will review your inquiry and get back to you within 24-48 hours.</p>
       
       <p>
         Best regards,<br>
         The FlightPhase Team
       </p>
       
-      <div class="social">
-        <p>Follow us on social media for updates and training tips:</p>
-        <a href="https://twitter.com/flightphase" style="color: #00BFFF;">Twitter</a>
-        <a href="https://instagram.com/flightphase" style="color: #00BFFF;">Instagram</a>
-        <a href="https://facebook.com/flightphase" style="color: #00BFFF;">Facebook</a>
-      </div>
+      <a href="https://flightphase.vercel.app/" class="button">Visit Our Website</a>
     </div>
     <div class="footer">
-      <p>© ${new Date().getFullYear()} FlightPhase. All rights reserved.</p>
-      <p>This is an automated message, please do not reply directly to this email.</p>
+      <p>&copy; ${new Date().getFullYear()} FlightPhase. All rights reserved.</p>
     </div>
   </div>
 </body>
@@ -110,26 +126,41 @@ export function generateConfirmationEmail(inquiry: any): string {
  * Generate plain text email template for confirmation emails to users
  */
 export function generateConfirmationEmailText(inquiry: any): string {
+  // Customize message based on program type
+  let programSpecificMessage = '';
+  
+  switch(inquiry.programType) {
+    case 'First Class 1:1 Coaching':
+      programSpecificMessage = 'Our personalized 1:1 coaching program will help you achieve your specific athletic goals.';
+      break;
+    case 'Elite Group Training':
+      programSpecificMessage = 'Our Elite Group Training program will push you to new heights in a competitive team environment.';
+      break;
+    case 'Two-a-Day Intensives':
+      programSpecificMessage = 'The Two-a-Day Intensives program is designed to maximize your progress through focused, high-intensity sessions.';
+      break;
+    case 'Online Program':
+      programSpecificMessage = 'Our online program provides you with the tools and techniques to transform your athletic performance remotely.';
+      break;
+    default:
+      programSpecificMessage = 'We offer various programs tailored to meet your specific athletic goals.';
+  }
+
   return `
 THANK YOU FOR CONTACTING FLIGHTPHASE
 
 Hello ${inquiry.name},
 
 We have received your inquiry about the ${inquiry.programType} program.
+${programSpecificMessage}
 
-Thank you for your interest in FlightPhase. Our team will review your inquiry and get back to you as soon as possible, usually within 24-48 hours.
-
-If you have any additional questions or need immediate assistance, feel free to reach out to us directly.
+Our team will review your inquiry and get back to you within 24-48 hours.
 
 Best regards,
 The FlightPhase Team
 
-Follow us on social media for updates and training tips:
-Twitter: https://twitter.com/flightphase
-Instagram: https://instagram.com/flightphase
-Facebook: https://facebook.com/flightphase
+Visit our website: https://flightphase.vercel.app/
 
 © ${new Date().getFullYear()} FlightPhase. All rights reserved.
-This is an automated message, please do not reply directly to this email.
   `.trim();
 } 

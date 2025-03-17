@@ -10,6 +10,7 @@ A modern, responsive website for FlightPhase, offering elite speed and strength 
 - 🔒 TypeScript for type safety
 - 🎯 Tailwind CSS for styling
 - 🌓 Dark mode optimized
+- 📧 Program-specific email notifications with customized templates
 
 ## Tech Stack
 
@@ -18,6 +19,7 @@ A modern, responsive website for FlightPhase, offering elite speed and strength 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Radix UI](https://www.radix-ui.com/)
 - [Lucide Icons](https://lucide.dev/)
+- [Nodemailer](https://nodemailer.com/) for email functionality
 
 ## Getting Started
 
@@ -34,23 +36,50 @@ cd flightphase
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+   - Create a `.env.local` file in the root directory
+   - Add the following variables:
+   ```
+   # SMTP Configuration for contact form
+   SMTP_USER=your-email@gmail.com
+   SMTP_PASS=your-app-password
+   
+   # Email recipients
+   RECIPIENT_EMAIL=admin@yourdomain.com
+   # Optional: Add CC and BCC recipients
+   BCC_EMAIL=optional-bcc@yourdomain.com
+   ```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Structure
 
 ```
 ├── app/                  # Next.js app directory
-├── components/          # React components
-├── public/             # Static assets
-├── styles/            # Global styles
-└── lib/              # Utility functions
+│   ├── api/              # API routes
+│   └── email-templates/  # Email template files
+├── components/           # React components
+├── public/               # Static assets
+├── styles/               # Global styles
+└── lib/                  # Utility functions
 ```
+
+## Email Functionality
+
+The website includes a contact form with program-specific email templates:
+
+- **API Endpoint**: `/api/inquiries` handles form submissions
+- **Email Templates**: Customized based on the selected program
+- **Notifications**: Admin receives detailed inquiry information
+- **Confirmation**: Users receive a confirmation email with program details
+
+For more details, see the [Email Documentation](docs/EMAIL.md).
 
 ## Development
 
