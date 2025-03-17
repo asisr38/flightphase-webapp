@@ -369,7 +369,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex items-center text-neutral-400 text-sm justify-center">
+                <div className="flex items-center text-neutral-400 text-sm">
                   <Shield className="h-4 w-4 mr-2 text-blue-400" />
                   <span>Lifetime access with no recurring fees</span>
                 </div>
