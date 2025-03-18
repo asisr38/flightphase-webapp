@@ -22,12 +22,17 @@ export default function OnlineProgramPage() {
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
+        setIsPlaying(false);
       } else {
-        videoRef.current.play().catch(err => {
-          console.error("Error playing video:", err);
-        });
+        videoRef.current.play()
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(err => {
+            console.error("Error playing video:", err);
+            // Don't set isPlaying to true if there was an error
+          });
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
