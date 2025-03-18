@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
+import { TikTok } from "@/components/icons/tiktok";
 
 export function SiteFooter() {
   return (
@@ -26,14 +27,15 @@ export function SiteFooter() {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Youtube, href: "#" }
+                { icon: TikTok, href: "https://www.tiktok.com/@flight.phase?_t=ZT-8unDzwgFMoI&_r=1" },
+                { icon: Instagram, href: "https://www.instagram.com/flightphas.e?igsh=cXZiaXVueGx4NGgz&utm_source=qr" },
+                { icon: Youtube, href: "https://youtube.com/@flightphas.e?si=C4N5NoKWRWZ6EHBd" }
               ].map((social, i) => (
                 <Link
                   key={i}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
                 >
                   <social.icon className="h-5 w-5" />
