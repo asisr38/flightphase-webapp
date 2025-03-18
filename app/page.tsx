@@ -127,12 +127,12 @@ export default function HomePage() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="backdrop-blur-sm bg-black/30 md:bg-white/5 rounded-xl md:rounded-2xl p-2 md:p-4 border border-white/10"
+                      className="backdrop-blur-sm bg-black/50 md:bg-black/40 rounded-xl md:rounded-2xl p-2 md:p-4 border border-white/20"
                     >
-                      <div className="gradient-text-accent text-sm sm:text-base md:text-base font-medium md:font-semibold">
+                      <div className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300 text-sm sm:text-base md:text-base font-bold">
                         {item.stat}
                       </div>
-                      <div className="text-xs sm:text-sm md:text-sm text-neutral-200">
+                      <div className="text-xs sm:text-sm md:text-sm text-white">
                         {item.label}
                       </div>
                     </div>
