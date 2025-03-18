@@ -7,6 +7,9 @@ import { Users, Zap, Timer, MapPin, Calendar, CheckCircle } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { InquiryModal } from "@/components/InquiryModal"
 
+// Metadata must be in a separate server file since this is a client component
+// Create a new file app/training/metadata.ts for the metadata configuration
+
 export default function TrainingPage() {
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false)
   const [selectedProgram, setSelectedProgram] = useState<string>("General")

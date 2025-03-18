@@ -22,8 +22,38 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "FlightPhase | Elite Athletic Training",
-  description:
-    "Transform your athletic performance with elite speed and strength coaching from FlightPhase.",
+  description: "Transform your athletic performance with elite speed and strength coaching from FlightPhase. Specialized programs for athletes of all levels.",
+  keywords: ["athletic training", "speed training", "strength coaching", "sports performance", "elite coaching", "FlightPhase"],
+  authors: [{ name: "Aron Long", url: "https://flightphase.com" }],
+  creator: "FlightPhase",
+  publisher: "FlightPhase",
+  metadataBase: new URL("https://flightphase.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://flightphase.com",
+    title: "FlightPhase | Elite Athletic Training",
+    description: "Transform your athletic performance with elite speed and strength coaching from FlightPhase. Specialized programs for athletes of all levels.",
+    siteName: "FlightPhase",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "FlightPhase Elite Athletic Training",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FlightPhase | Elite Athletic Training",
+    description: "Transform your athletic performance with elite speed and strength coaching from FlightPhase. Specialized programs for athletes of all levels.",
+    images: ["/images/twitter-image.jpg"],
+    creator: "@flightphase",
+  },
   icons: {
     icon: [
       {
@@ -32,7 +62,8 @@ export const metadata = {
       }
     ]
   },
-  generator: "v0.dev"
+  generator: "v0.dev",
+  category: "Sports & Fitness",
 };
 
 export default function RootLayout({

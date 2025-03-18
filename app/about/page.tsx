@@ -1,6 +1,25 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Award, BookOpen, Briefcase, GraduationCap, Target, Users } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About Aron Long | FlightPhase",
+  description: "Learn about Aron Long, Division I track athlete, professional coach, and founder of FlightPhase. Discover his journey, expertise, and coaching philosophy.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Aron Long | FlightPhase",
+    description: "Learn about Aron Long, Division I track athlete, professional coach, and founder of FlightPhase. Discover his journey, expertise, and coaching philosophy.",
+    url: "https://flightphase.com/about",
+    type: "profile",
+  },
+  twitter: {
+    title: "About Aron Long | FlightPhase",
+    description: "Learn about Aron Long, Division I track athlete, professional coach, and founder of FlightPhase. Discover his journey, expertise, and coaching philosophy.",
+  },
+}
 
 export default function AboutPage() {
   return (

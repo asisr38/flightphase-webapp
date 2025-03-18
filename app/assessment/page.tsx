@@ -1,6 +1,26 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronRight, LineChart, ListChecks, Target } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Athletic Assessment | FlightPhase",
+  description: "Comprehensive athletic assessment from FlightPhase. Evaluate your strengths, identify areas for improvement, and get personalized training recommendations.",
+  alternates: {
+    canonical: "/assessment",
+  },
+  openGraph: {
+    title: "Athletic Assessment | FlightPhase",
+    description: "Comprehensive athletic assessment from FlightPhase. Evaluate your strengths, identify areas for improvement, and get personalized training recommendations.",
+    url: "https://flightphase.com/assessment",
+    type: "website",
+  },
+  twitter: {
+    title: "Athletic Assessment | FlightPhase",
+    description: "Comprehensive athletic assessment from FlightPhase. Evaluate your strengths, identify areas for improvement, and get personalized training recommendations.",
+  },
+  keywords: ["athletic assessment", "performance evaluation", "sports testing", "movement screening", "athletic benchmarking", "performance metrics"],
+}
 
 export default function AssessmentPage() {
   return (
