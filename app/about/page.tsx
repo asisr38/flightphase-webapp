@@ -36,7 +36,7 @@ export default function AboutPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-white">Our Mission</h2>
               <p className="text-xl md:text-2xl font-light text-white/90 italic">
                 "To transform athletes through elite training methodologies that develop explosive speed, strength, and
-                stability, enabling them to reach their highest competitive potential."
+                skill training, enabling them to reach their highest competitive potential."
               </p>
             </div>
           </div>

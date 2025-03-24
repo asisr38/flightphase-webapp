@@ -1,6 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
+import React from "react";
+
+// Custom TikTok icon component since it's not available in Lucide icons
+function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+}
 
 export function SiteFooter() {
   return (
@@ -26,15 +47,16 @@ export function SiteFooter() {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Youtube, href: "#" }
+                { icon: Instagram, href: "https://www.instagram.com/flightphas.e?utm_source=qr" },
+                { icon: TikTokIcon, href: "https://www.tiktok.com/@flight.phase?_t=ZT-8unDzwgFMoI&_r=1" },
+                { icon: Youtube, href: "https://www.youtube.com/@flightphas.e" }
               ].map((social, i) => (
                 <Link
                   key={i}
                   href={social.href}
                   className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <social.icon className="h-5 w-5" />
                 </Link>

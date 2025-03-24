@@ -121,9 +121,9 @@ export default function HomePage() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 pt-6 md:pt-8 max-w-3xl w-full">
                   {[
-                    { stat: "All-State", label: "Track Athlete" },
-                    { stat: "Conference", label: "Champion" },
-                    { stat: "Athletic", label: "Scholarship" }
+                    { stat: "Division I", label: "Conference Champion" },
+                    { stat: "Full Ride Division I", label: "Scholarship Athlete" },
+                    { stat: "Top 10 Fastest Sprinter", label: "in VMI History" }
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -194,7 +194,7 @@ export default function HomePage() {
                     "At Flight Phase, we empower athletes to reach their highest
                     potential through scientifically backed training methods and
                     a commitment to excellence, focusing on explosive speed,
-                    strength, and agility."
+                    strength, and skill training."
                   </p>
                 </div>
 
@@ -228,7 +228,7 @@ export default function HomePage() {
                             Championship Athlete
                           </h4>
                           <p className="text-neutral-400 text-sm">
-                            Big South champion & top East region ranking
+                            Division I Conference Champion
                           </p>
                         </div>
                       </div>
@@ -240,10 +240,10 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h4 className="text-white font-medium">
-                            Corporate Leadership
+                            Professional Leadership
                           </h4>
                           <p className="text-neutral-400 text-sm">
-                            8 years at Fortune 300 & Fortune 5 companies
+                            9 years at Fortune 5 & Fortune 300 companies
                           </p>
                         </div>
                       </div>
@@ -255,10 +255,10 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h4 className="text-white font-medium">
-                            Advanced Education
+                            Higher Education
                           </h4>
                           <p className="text-neutral-400 text-sm">
-                            MBA (Louisville) & History degree (VMI)
+                            University of Louisville MBA '19 & Virginia Military Institute B.A '16
                           </p>
                         </div>
                       </div>
