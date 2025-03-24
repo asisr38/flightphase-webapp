@@ -276,10 +276,6 @@ export default function HomePage() {
                     developing explosive speed, functional strength, and core
                     stability.
                   </p>
-                  <Button className="gradient-button text-white rounded-full">
-                    Learn More About Aron
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
                 </div>
               </div>
             </div>
@@ -354,7 +350,7 @@ export default function HomePage() {
                     </div>
 
                     <a
-                      href="https://buy.stripe.com/test_9AQaG78Vm3YC8Mg001"
+                      href="https://buy.stripe.com/7sI7sCcDM6TEdVeeUU"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

@@ -67,12 +67,18 @@ export default function OnlineProgramPage() {
                     39% OFF
                   </span>
                 </div>
-                <Button
-                  size="lg"
-                  className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium px-8"
+                <a
+                  href="https://buy.stripe.com/7sI7sCcDM6TEdVeeUU"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Buy Now
-                </Button>
+                  <Button
+                    size="lg"
+                    className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium px-8"
+                  >
+                    Buy Now
+                  </Button>
+                </a>
                 <div className="flex items-center text-white/80 text-sm">
                   <Shield className="h-4 w-4 mr-2 text-[#00BFFF]" />
                   <span>

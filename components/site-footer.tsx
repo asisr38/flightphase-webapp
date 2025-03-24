@@ -122,10 +122,10 @@ export function SiteFooter() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:contact@flightphase.com"
+                  href="mailto:flightphase@outlook.com"
                   className="text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  contact@flightphase.com
+                  flightphase@outlook.com
                 </a>
               </li>
               <li className="text-sm text-white/60">
