@@ -86,6 +86,17 @@
     @apply bg-gradient-to-r from-[#1E0B4C] via-[#4B9EFF] to-[#0B4FFF] bg-clip-text text-transparent;
   }
 
+  .gradient-text-accent-outlined {
+    @apply bg-gradient-to-r from-[#1E0B4C] via-[#4B9EFF] to-[#0B4FFF] bg-clip-text text-transparent;
+    text-shadow: 0 0 8px rgba(75, 158, 255, 0.5), 0 0 3px rgba(75, 158, 255, 0.7);
+  }
+
+  .stat-text-highlighted {
+    @apply text-white;
+    text-shadow: 0 0 4px #4B9EFF, 0 0 10px #4B9EFF, 0 0 15px rgba(11, 79, 255, 0.8);
+    letter-spacing: 0.01em;
+  }
+
   .gradient-text {
     @apply bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent;
   }
