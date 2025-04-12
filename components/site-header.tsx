@@ -95,6 +95,30 @@ export function SiteHeader() {
                 Get The Course
               </Button>
             </Link>
+            <Link
+              href="https://www.instagram.com/flightphas.e?utm_source=qr"
+              className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@flight.phase?_t=ZT-8unDzwgFMoI&_r=1"
+              className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TikTokIcon className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@flightphas.e"
+              className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Youtube className="h-5 w-5" />
+            </Link>
           </div>
 
           <div className="flex items-center">

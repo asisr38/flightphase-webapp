@@ -76,7 +76,7 @@ export default function OnlineProgramPage() {
                     size="lg"
                     className="bg-[#00BFFF] hover:bg-[#00BFFF]/90 text-white font-medium px-8"
                   >
-                    Buy Now
+                    Unlock your potential
                   </Button>
                 </a>
                 <div className="flex items-center text-white/80 text-sm">

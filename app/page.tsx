@@ -358,7 +358,7 @@ export default function HomePage() {
                         size="lg"
                         className="gradient-button text-white rounded-full h-14 px-8 text-lg"
                       >
-                        Buy Now
+                        Unlock your potential
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </a>
