@@ -1,4 +1,17 @@
 /**
+ * Escape HTML special characters to prevent XSS in email templates
+ */
+function escapeHtml(str: string | undefined | null): string {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
  * Generate HTML email template for inquiry notifications to admin
  */
 export function generateNotificationEmail(inquiry: any): string {
@@ -111,24 +124,25 @@ export function generateNotificationEmail(inquiry: any): string {
 <body>
   <div class="container">
     <div class="header">
-      <h1>New Inquiry: ${inquiry.programType}</h1>
+      <h1>New Inquiry: ${escapeHtml(inquiry.programType)}</h1>
+      ${programInfo ? `<p style="margin:8px 0 0;font-size:14px;opacity:0.85;">${escapeHtml(programInfo)}</p>` : ''}
     </div>
-    
+
     <div class="detail">
-      <strong>Name:</strong> ${inquiry.name}
+      <strong>Name:</strong> ${escapeHtml(inquiry.name)}
     </div>
-    
+
     <div class="detail">
-      <strong>Email:</strong> ${inquiry.email}
+      <strong>Email:</strong> ${escapeHtml(inquiry.email)}
     </div>
-    
+
     <div class="detail">
-      <strong>Phone:</strong> ${inquiry.phone || 'Not provided'}
+      <strong>Phone:</strong> ${escapeHtml(inquiry.phone) || 'Not provided'}
     </div>
-    
+
     <div class="message-box">
       <h3>Message:</h3>
-      <p>${inquiry.message || 'No message provided'}</p>
+      <p>${escapeHtml(inquiry.message) || 'No message provided'}</p>
     </div>
     
     <div class="detail">

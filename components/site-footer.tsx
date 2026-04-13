@@ -50,9 +50,9 @@ export function SiteFooter() {
                 { icon: Instagram, href: "https://www.instagram.com/flightphas.e?utm_source=qr" },
                 { icon: TikTokIcon, href: "https://www.tiktok.com/@flight.phase?_t=ZT-8unDzwgFMoI&_r=1" },
                 { icon: Youtube, href: "https://www.youtube.com/@flightphas.e" }
-              ].map((social, i) => (
+              ].map((social) => (
                 <Link
-                  key={i}
+                  key={social.href}
                   href={social.href}
                   className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
                   target="_blank"
@@ -75,8 +75,8 @@ export function SiteFooter() {
                 { label: "About", href: "#about" },
                 { label: "Training Programs", href: "#training" },
                 { label: "Assessment", href: "#assessment" }
-              ].map((link, i) => (
-                <li key={i}>
+              ].map((link) => (
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors duration-200 flex items-center group"
@@ -96,12 +96,12 @@ export function SiteFooter() {
             </h3>
             <ul className="space-y-4">
               {[
-                { label: "1:1 Coaching", href: "#" },
-                { label: "Group Training", href: "#" },
-                { label: "Two-a-Day Intensives", href: "#" },
-                { label: "Online Training", href: "#" }
-              ].map((program, i) => (
-                <li key={i}>
+                { label: "1:1 Coaching", href: "#training" },
+                { label: "Group Training", href: "#training" },
+                { label: "Two-a-Day Intensives", href: "#training" },
+                { label: "Online Training", href: "#online-program" }
+              ].map((program) => (
+                <li key={program.label}>
                   <Link
                     href={program.href}
                     className="text-sm text-white/60 hover:text-white transition-colors duration-200 flex items-center group"

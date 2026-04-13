@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { 
   Dialog, 
   DialogContent, 
@@ -30,6 +30,11 @@ export function InquiryModal({ open, onOpenChange, programType = "General" }: In
     message: "",
     programType: programType,
   })
+
+  // Keep programType in sync if the parent changes which program was selected
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, programType }))
+  }, [programType])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target

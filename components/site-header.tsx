@@ -32,12 +32,7 @@ export function SiteHeader() {
   const [sheetOpen, setSheetOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 10);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Check initial scroll position
@@ -45,7 +40,7 @@ export function SiteHeader() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]);
+  }, []); // Empty deps — no re-registration on every scroll
 
   const handleLinkClick = () => {
     setSheetOpen(false);
@@ -173,9 +168,9 @@ export function SiteHeader() {
                       { icon: Instagram, href: "https://www.instagram.com/flightphas.e?utm_source=qr" },
                       { icon: TikTokIcon, href: "https://www.tiktok.com/@flight.phase?_t=ZT-8unDzwgFMoI&_r=1" },
                       { icon: Youtube, href: "https://www.youtube.com/@flightphas.e" }
-                    ].map((social, i) => (
+                    ].map((social) => (
                       <Link
-                        key={i}
+                        key={social.href}
                         href={social.href}
                         className="w-10 h-10 glass-effect rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 hover:border-blue-500/50"
                         target="_blank"

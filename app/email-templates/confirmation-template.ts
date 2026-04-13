@@ -1,4 +1,17 @@
 /**
+ * Escape HTML special characters to prevent XSS in email templates
+ */
+function escapeHtml(str: string | undefined | null): string {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
  * Generate HTML email template for confirmation emails to users
  */
 export function generateConfirmationEmail(inquiry: any): string {
@@ -97,10 +110,10 @@ export function generateConfirmationEmail(inquiry: any): string {
       <h1>Thank You for Your Interest in FlightPhase</h1>
     </div>
     <div class="content">
-      <h2>Hello ${inquiry.name},</h2>
-      
+      <h2>Hello ${escapeHtml(inquiry.name)},</h2>
+
       <div class="highlight">
-        <p>We have received your inquiry about the <strong>${inquiry.programType}</strong> program.</p>
+        <p>We have received your inquiry about the <strong>${escapeHtml(inquiry.programType)}</strong> program.</p>
         <p>${programSpecificMessage}</p>
       </div>
       
